@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class LibraryTest {
+    public static void main(String[] args) {
+        Scanner keyboardInput = new Scanner(System.in);
+        String borrower, userQuery;
+
+
+        LibraryItemFactory factory = new LibraryItemFactory();
+        Library itemCollection = Library.getInstance();
+
+        System.out.println("Enter your name: ");
+        borrower = keyboardInput.nextLine();
+
+        System.out.println("Creating Books...");
+        Item book1 = factory.createItem("book", "Heart Talk", 2018, "Cleo Wade");
+        Item book2 = factory.createItem("book", "Scythe", 2016, "Neal Schusterman");
+        itemCollection.addItem(book1); //Add first book to collection
+        itemCollection.addItem(book2); //Add second book to collection
+
+        System.out.println("Lending books...");
+        System.out.println(book1.getTitle() + "Borrowoed by: " + borrower);
+        System.out.println(book2.getTitle() + "Borrowoed by: " + borrower);
+        
+
+        System.out.println("Creating Magazine...");
+
+        itemCollection.addItem(factory.createItem("magazine", "Thrasher Magazine", 2018, "500"));
+
+        itemCollection.listAvailableItems();
+
+        System.out.println("Enter item title: ");
+        userQuery = keyboardInput.nextLine();
+
+        itemCollection.findItembyTitle(userQuery);
+
+    }
+}
