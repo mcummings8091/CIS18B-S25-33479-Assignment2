@@ -1,4 +1,5 @@
 interface ItemBuilder {
-    public void buildTitle(String title);
-    public void buildPublicationYear(int publicationYear); 
+    void buildTitle(String title);
+    void buildPublicationYear(int publicationYear);
+    Item getResult(); 
 }

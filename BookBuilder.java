@@ -1,6 +1,9 @@
 class BookBuilder implements ItemBuilder {
     private Book book;
 
+    public BookBuilder() {
+        this.book = new Book();
+    }
 
     public void buildAuthor(String author) {
         book.setAuthor(author);
@@ -22,5 +25,10 @@ class BookBuilder implements ItemBuilder {
     @Override
     public void buildPublicationYear(int publicationYear) {
         this.book.setPublicationYear(publicationYear);
+    }
+
+    @Override
+    public Item getResult() {
+        return book;
     }
 }
