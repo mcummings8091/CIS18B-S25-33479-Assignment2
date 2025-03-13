@@ -19,17 +19,16 @@ public class LibraryTest {
         itemCollection.addItem(book2); //Add second book to collection
 
         System.out.println("Lending books...");
-        System.out.println(book1.getTitle() + "Borrowoed by: " + borrower);
-        System.out.println(book2.getTitle() + "Borrowoed by: " + borrower);
+        System.out.println(book1.getTitle() + " Borrowoed by: " + borrower);
+        System.out.println(book2.getTitle() + " Borrowoed by: " + borrower);
         
 
         System.out.println("Creating Magazine...");
-
         itemCollection.addItem(factory.createItem("magazine", "Thrasher Magazine", 2018, "500"));
 
-        itemCollection.listAvailableItems();
+        itemCollection.listAvailableItems(); //List items to user
 
-        System.out.println("Enter item title: ");
+        System.out.println("Enter item title: "); //Prompt user for input
         userQuery = keyboardInput.nextLine();
 
         itemCollection.findItembyTitle(userQuery);
