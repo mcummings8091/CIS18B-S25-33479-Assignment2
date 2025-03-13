@@ -31,12 +31,13 @@ public class Library {
         for (Item item : collection) {
             System.out.println(item.getTitle());
         }
-    }
+    }       
 
     public void findItembyTitle(String title) {
         for (Item item : collection) {
             if (item.getTitle().equals(title)) {
-                System.out.println(item.getTitle());
+                System.out.println("Title: " + item.getTitle());
+                System.out.println("Publication Year: " + item.getPublicationYear());
             }
         }
     }
